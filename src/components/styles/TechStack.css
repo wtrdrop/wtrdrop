@@ -1,0 +1,79 @@
+.techstack {
+  position: relative;
+  z-index: 1;
+  background-color: var(--backgroundColor);
+  padding: 80px 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.techstack h2 {
+  font-size: 70px;
+  font-weight: 500;
+  margin: 0 auto 60px;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 60px;
+  box-sizing: border-box;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  max-width: 900px;
+  padding: 0 30px;
+}
+
+.tech-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #eae5ec;
+  cursor: default;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.tech-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--pill-color, var(--accentColor));
+  color: var(--pill-color, var(--accentColor));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+    0 0 16px color-mix(in srgb, var(--pill-color, var(--accentColor)) 20%, transparent);
+}
+
+.tech-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--pill-color, var(--accentColor));
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 900px) {
+  .techstack {
+    padding: 50px 0 70px;
+  }
+
+  .techstack h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    padding: 0 30px;
+  }
+
+  .tech-pill {
+    font-size: 13px;
+    padding: 10px 18px;
+  }
+}

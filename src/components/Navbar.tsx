@@ -1,0 +1,94 @@
+import { useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import HoverLinks from "./HoverLinks";
+import { gsap } from "gsap";
+import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
+import "./styles/Navbar.css";
+import { getConfig } from "../data/siteConfig";
+
+gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
+export let smoother: ScrollSmoother | undefined;
+
+const Navbar = () => {
+  useEffect(() => {
+    if (!ScrollTrigger.isTouch) {
+      smoother = ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 1,
+        speed: 1,
+        effects: true,
+        autoResize: true,
+        ignoreMobileResize: true,
+      });
+
+      smoother.scrollTop(0);
+      smoother.paused(true);
+    }
+
+    let links = document.querySelectorAll(".header ul a");
+    links.forEach((elem) => {
+      let element = elem as HTMLAnchorElement;
+      element.addEventListener("click", (e) => {
+        if (window.innerWidth > 1024) {
+          let elem = e.currentTarget as HTMLAnchorElement;
+          let href = elem.getAttribute("href");
+          if (href && href.startsWith("/#") && window.location.pathname === "/") {
+            e.preventDefault();
+            let section = href.replace("/", "");
+            smoother?.scrollTo(section, true, "top top");
+          }
+        }
+      });
+    });
+    window.addEventListener("resize", () => {
+      ScrollSmoother.refresh(true);
+    });
+  }, []);
+  const config = getConfig();
+  return (
+    <>
+      <div className="header">
+        <a href="/#" className="navbar-title" data-cursor="disable">
+          <img src="/logo.png" alt="WtrDrop Dashboard Logo" style={{ height: "100px", width: "auto" }} />
+        </a>
+        <a
+          href={config.downloadLink}
+          className="navbar-connect download-btn"
+          data-cursor="disable"
+        >
+          <img src="/3d-icons/playstore.png" alt="Playstore" className="playstore-icon" />
+          <span>Download Now</span>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              <HoverLinks text="HOME" />
+            </a>
+          </li>
+          <li>
+            <a href="/#about">
+              <HoverLinks text="ABOUT US" />
+            </a>
+          </li>
+          <li>
+            <a href="/#contact">
+              <HoverLinks text="CONTACT" />
+            </a>
+          </li>
+          <li>
+            <a href="/help">
+              <HoverLinks text="HELP CENTER" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div className="landing-circle1"></div>
+      <div className="landing-circle2"></div>
+      <div className="nav-fade"></div>
+    </>
+  );
+};
+
+export default Navbar;

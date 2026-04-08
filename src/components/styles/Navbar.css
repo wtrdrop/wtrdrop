@@ -1,0 +1,134 @@
+.header {
+  display: flex;
+  max-width: var(--cMaxWidth);
+  width: var(--cWidth);
+  justify-content: space-between;
+  padding: 20px 0px;
+  margin-bottom: -100px;
+  box-sizing: border-box;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  z-index: 9999;
+}
+
+.header ul {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  column-gap: 40px;
+  row-gap: 8px;
+  align-items: end;
+}
+
+.header ul li {
+  margin-left: 0px;
+  letter-spacing: 1px;
+  color: var(--textColor);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navbar-connect {
+  position: absolute;
+  display: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  color: #1a365d !important;
+  padding: 8px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  box-shadow: 
+    inset 0 4px 6px rgba(255, 255, 255, 0.8),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.08),
+    0 4px 10px rgba(0, 0, 0, 0.15),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.navbar-connect:hover {
+  transform: translate(-50%, -52%) scale(1.02);
+  box-shadow: 
+    inset 0 4px 6px rgba(255, 255, 255, 0.9),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.1),
+    0 6px 15px rgba(0, 0, 0, 0.2),
+    0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-connect:active {
+  transform: translate(-50%, -48%) scale(0.98);
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.15),
+    0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.playstore-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+}
+
+.navbar-title {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+@media only screen and (min-width: 500px) {
+  .header {
+    padding: 20px 0px;
+  }
+
+  .header ul {
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .header ul li {
+    color: var(--textColor);
+  }
+
+  .navbar-title {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .navbar-connect {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .header {
+    padding: 35px 0px;
+  }
+
+  .header ul {
+    column-gap: 80px;
+    font-size: 16px;
+  }
+
+  .navbar-connect {
+    font-size: 16px;
+  }
+
+  .navbar-title {
+    font-size: 18px;
+  }
+}
