@@ -24,10 +24,12 @@ const Loading = ({ percent }: { percent: number }) => {
       if (isLoaded) {
         setClicked(true);
         setTimeout(() => {
-          if (module.initialFX) {
-            module.initialFX();
-          }
-          setIsLoading(false);
+          document.fonts.ready.then(() => {
+            if (module.initialFX) {
+              module.initialFX();
+            }
+            setIsLoading(false);
+          });
         }, 900);
       }
     });
