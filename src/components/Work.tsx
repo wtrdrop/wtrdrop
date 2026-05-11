@@ -78,10 +78,7 @@ const Work = () => {
                         <p className="carousel-category">
                           {project.category}
                         </p>
-                        <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
-                          <p>{project.tools}</p>
-                        </div>
+
                       </div>
                     </div>
                     <div className="carousel-image-wrapper">
