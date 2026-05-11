@@ -33,33 +33,33 @@ export interface SiteConfig {
 const DEFAULT_CONFIG: SiteConfig = {
   socialLinks: {
     facebook: "https://www.facebook.com/",
-    linkedin: "https://www.linkedin.com/in/salman-dev",
-    twitter: "https://x.com/salman_dev",
-    instagram: "https://www.instagram.com/salman_dev",
+    linkedin: "https://www.linkedin.com/in/",
+    twitter: "https://x.com/WtrDrop_in",
+    instagram: "https://www.instagram.com/wtrdrop?igsh=MWVicTlzZ3E4MnJqbQ==",
   },
   contact: {
-    email: "salman@wtrdrop.app",
+    email: "Query@wtrdrop.in",
     focus: "Water Delivery · Ecosystem · Platform",
   },
-  downloadLink: "#",
+  downloadLink: "https://play.google.com/store/apps/details?id=com.wtrdrop",
   testimonials: [
     {
-      name: "Rajesh Kumar",
-      role: "Customer, Hyderabad",
+      name: "Sanjay",
+      role: "Customer, Delhi",
       text: "\"WtrDrop has completely changed how we get water at home. The subscription feature is a lifesaver — we never run out anymore!\"",
-      avatarLetter: "R",
+      avatarLetter: "S",
       avatarGradient: "linear-gradient(135deg, #008BD2, #03DAC6)",
     },
     {
-      name: "Priya Sharma",
-      role: "Water Supplier, Bangalore",
+      name: "Akthar",
+      role: "Water Supplier, Delhi",
       text: "\"As a supplier, WtrDrop helped me grow my business 3x. The driver management and GPS tracking make operations smooth and efficient.\"",
-      avatarLetter: "P",
+      avatarLetter: "A",
       avatarGradient: "linear-gradient(135deg, #03DAC6, #018786)",
     },
     {
-      name: "Amit Patel",
-      role: "Customer, Mumbai",
+      name: "Ayaan",
+      role: "Customer, Delhi",
       text: "\"The real-time tracking feature is amazing! I can see exactly when my water will arrive. Plus, the pay-on-delivery option is super convenient.\"",
       avatarLetter: "A",
       avatarGradient: "linear-gradient(135deg, #008BD2, #5B3CC4)",
@@ -69,21 +69,21 @@ const DEFAULT_CONFIG: SiteConfig = {
     {
       title: "WtrDrop — Customer App",
       category: "Mobile App · Water Delivery Platform",
-      tools: "Flutter, Firebase, Firestore, Google Maps, FCM, QR Scanner",
+      
       image: "/images/wtrdrop.png",
       description: "Customers browse suppliers, place water orders, and track real-time delivery on a live map. Features subscription plans, active order limits, OTP/QR delivery confirmation, and in-app support.",
     },
     {
       title: "WtrDrop — Supplier App",
       category: "Mobile App · Supplier Management",
-      tools: "Flutter, Firebase, Firestore, Cloud Functions, FCM",
+      
       image: "/images/wtrdrop.png",
       description: "Suppliers manage inventory, receive and assign orders to drivers, track daily revenue, generate invoices, and handle floor charges. Includes a full driver team management system with QR linking.",
     },
     {
       title: "WtrDrop — Driver App",
       category: "Mobile App · Delivery Management",
-      tools: "Flutter, Firebase, Google Maps, QR Scanner, FCM",
+      
       image: "/images/wtrdrop.png",
       description: "Drivers get live delivery assignments, navigate routes on Google Maps, complete orders via QR scan, manage daily cash collection, track commission earnings, and deposit settlements to suppliers.",
     },
