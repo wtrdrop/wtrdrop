@@ -32,8 +32,8 @@ export interface SiteConfig {
 
 const DEFAULT_CONFIG: SiteConfig = {
   socialLinks: {
-    facebook: "https://www.facebook.com/",
-    linkedin: "https://www.linkedin.com/in/",
+    facebook: "https://www.facebook.com/share/1SGdSw8oNx/",
+    linkedin: "https://www.linkedin.com/company/wtrdrop/",
     twitter: "https://x.com/WtrDrop_in",
     instagram: "https://www.instagram.com/wtrdrop?igsh=MWVicTlzZ3E4MnJqbQ==",
   },
