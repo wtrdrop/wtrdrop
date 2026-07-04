@@ -252,15 +252,16 @@ export default function Privacy() {
       />
     </Helmet>
 
-    <Navbar />
+     <Navbar />
 
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-        <div
-          className="static-page-container"
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <div
+            className="static-page-container"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
+        </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+}
