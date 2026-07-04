@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../components/Navbar";
 import { useLoading } from "../context/LoadingProvider";
 import "../wtrweb.css";
@@ -195,17 +196,71 @@ export default function Privacy() {
     setLoading(100);
   }, [setLoading]);
 
-  return (
-    <>
-      <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <div 
-            className="static-page-container" 
-            dangerouslySetInnerHTML={{ __html: htmlContent }} 
-          />
-        </div>
+ return (
+  <>
+    <Helmet>
+      <title>Privacy Policy - WtrDrop</title>
+
+      <meta
+        name="description"
+        content="Read WtrDrop's Privacy Policy to understand how we collect, use, process and protect your personal information."
+      />
+
+      <meta
+        name="keywords"
+        content="WtrDrop Privacy Policy, WtrDrop Privacy, Data Protection, Water Delivery Privacy"
+      />
+
+      <link
+        rel="canonical"
+        href="https://wtrdrop.in/privacy"
+      />
+
+      {/* Open Graph */}
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="WtrDrop" />
+      <meta property="og:title" content="Privacy Policy - WtrDrop" />
+      <meta
+        property="og:description"
+        content="Read WtrDrop's Privacy Policy."
+      />
+      <meta
+        property="og:url"
+        content="https://wtrdrop.in/privacy"
+      />
+      <meta
+        property="og:image"
+        content="https://wtrdrop.in/clogo.png"
+      />
+
+      {/* Twitter */}
+      <meta
+        name="twitter:card"
+        content="summary_large_image"
+      />
+      <meta
+        name="twitter:title"
+        content="Privacy Policy - WtrDrop"
+      />
+      <meta
+        name="twitter:description"
+        content="Read WtrDrop's Privacy Policy."
+      />
+      <meta
+        name="twitter:image"
+        content="https://wtrdrop.in/clogo.png"
+      />
+    </Helmet>
+
+    <Navbar />
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <div
+          className="static-page-container"
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
       </div>
-    </>
-  );
-}
+    </div>
+  </>
+);
