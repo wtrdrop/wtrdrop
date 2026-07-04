@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../components/Navbar";
 import { useLoading } from "../context/LoadingProvider";
 import "../wtrweb.css";
@@ -177,9 +178,63 @@ export default function Terms() {
     setLoading(100);
   }, [setLoading]);
 
-  return (
-    <>
-      <Navbar />
+ return (
+  <>
+    <Helmet>
+      <title>Terms & Conditions - WtrDrop</title>
+
+      <meta
+        name="description"
+        content="Read the official Terms & Conditions for using the WtrDrop platform, website and mobile applications."
+      />
+
+      <meta
+        name="keywords"
+        content="WtrDrop, Terms and Conditions, Terms of Service, Water Delivery App"
+      />
+
+      <link
+        rel="canonical"
+        href="https://wtrdrop.in/terms"
+      />
+
+      {/* Open Graph */}
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="WtrDrop" />
+      <meta property="og:title" content="Terms & Conditions - WtrDrop" />
+      <meta
+        property="og:description"
+        content="Read the official Terms & Conditions for using the WtrDrop platform."
+      />
+      <meta
+        property="og:url"
+        content="https://wtrdrop.in/terms"
+      />
+      <meta
+        property="og:image"
+        content="https://wtrdrop.in/clogo.png"
+      />
+
+      {/* Twitter */}
+      <meta
+        name="twitter:card"
+        content="summary_large_image"
+      />
+      <meta
+        name="twitter:title"
+        content="Terms & Conditions - WtrDrop"
+      />
+      <meta
+        name="twitter:description"
+        content="Read the official Terms & Conditions for using the WtrDrop platform."
+      />
+      <meta
+        name="twitter:image"
+        content="https://wtrdrop.in/clogo.png"
+      />
+    </Helmet>
+
+    <Navbar />
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div 
