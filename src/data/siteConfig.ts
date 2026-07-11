@@ -7,6 +7,7 @@ export interface SiteConfig {
     linkedin: string;
     twitter: string;
     instagram: string;
+    googleMaps: string;
   };
   contact: {
     email: string;
@@ -34,6 +35,7 @@ const DEFAULT_CONFIG: SiteConfig = {
     linkedin: "https://www.linkedin.com/in/",
     twitter: "https://x.com/WtrDrop_in",
     instagram: "https://www.instagram.com/wtrdrop?igsh=MWVicTlzZ3E4MnJqbQ==",
+    googleMaps: "https://share.google/RTFmzWusPosQeMAho",
   },
   contact: {
     email: "Query@wtrdrop.in",
