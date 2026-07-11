@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { useLoading } from "../context/LoadingProvider";
+import Seo from "../components/Seo";
 import "../wtrweb.css";
 
 const htmlContent = `<div class="policy-page-wrapper">
@@ -122,6 +123,7 @@ export default function Guidelines() {
 
   return (
     <>
+      <Seo title="Guidelines & Policies | WtrDrop" description="Review WtrDrop platform guidelines, water quality expectations, and delivery policies." path="/guidelines" />
       <Navbar />
       <div id="smooth-wrapper">
         <div id="smooth-content">

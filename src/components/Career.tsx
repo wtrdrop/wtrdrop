@@ -38,8 +38,8 @@ const Career = () => {
             </div>
             <p>
               Designed and built WtrDrop — a full-scale multi-role water
-              delivery platform. Architected 4 separate Flutter apps (Customer,
-              Supplier, Driver, Admin) with a shared Firebase backend, real-time
+              delivery platform. Architected dedicated Flutter apps for customers,
+              suppliers, and drivers with a shared Firebase backend, real-time
               Firestore sync, QR workflows, and Google Maps integration.
             </p>
           </div>

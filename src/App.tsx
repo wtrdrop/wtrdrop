@@ -4,16 +4,19 @@ import "./App.css";
 
 const CharacterModel = lazy(() => import("./components/Character"));
 const MainContainer = lazy(() => import("./components/MainContainer"));
-const AdminLogin = lazy(() => import("./pages/AdminLogin"));
-const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 import { LoadingProvider } from "./context/LoadingProvider";
 import Help from "./pages/Help";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Guidelines from "./pages/Guidelines";
+import Seo from "./components/Seo";
 
 const Home = () => (
   <MainContainer>
+    <Seo
+      title="WtrDrop | Fresh Water Delivery, On Demand"
+      description="Order fresh drinking water from trusted local suppliers with WtrDrop. Schedule delivery, manage subscriptions, and track your order in real time."
+    />
     <Suspense>
       <CharacterModel />
     </Suspense>
@@ -29,11 +32,6 @@ const App = () => {
   return (
     <Suspense>
       <Routes>
-        {/* Admin routes — placed FIRST, no LoadingProvider, no 3D loader */}
-        {/* URL is cryptic to keep it hidden from the public */}
-        <Route path="/wtr-admin-secure-v88" element={<AdminLogin />} />
-        <Route path="/wtr-dashboard-v88" element={<AdminDashboard />} />
-
         {/* Main site routes — wrapped in LoadingProvider */}
         <Route path="/" element={<WithLoading><Home /></WithLoading>} />
         <Route path="/help" element={<WithLoading><Help /></WithLoading>} />

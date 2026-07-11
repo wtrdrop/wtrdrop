@@ -1,35 +1,10 @@
-import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import { MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
 import { getConfig } from "../data/siteConfig";
 
 const Contact = () => {
   const config = getConfig();
-  const navigate = useNavigate();
-  
-  // Secret Admin Portal Access Logic
-  const clickCount = useRef(0);
-  const lastClickTime = useRef(0);
 
-  const handleSecretClick = () => {
-    const now = Date.now();
-    
-    // Reset if time between clicks is more than 500ms
-    if (now - lastClickTime.current > 500) {
-      clickCount.current = 1;
-    } else {
-      clickCount.current += 1;
-    }
-    
-    lastClickTime.current = now;
-
-    // Trigger on 3 fast clicks
-    if (clickCount.current === 3) {
-      navigate("/wtr-admin-secure-v88");
-      clickCount.current = 0; // Reset
-    }
-  };
 
   return (
     <div className="contact-section section-container" id="contact">
@@ -84,11 +59,7 @@ const Contact = () => {
           <div className="contact-box">
             <h2>
               A Product of <br /> 
-              <span 
-                onClick={handleSecretClick} 
-                className="footer-logo-secret"
-                title="WtrDrop"
-              >
+              <span>
                 WtrDrop
               </span>
             </h2>
