@@ -69,19 +69,19 @@ const DEFAULT_CONFIG: SiteConfig = {
     {
       title: "WtrDrop — Customer App",
       category: "Mobile App · Water Delivery Platform",
-      image: "/images/wtrdrop.png",
+      image: "/images/customer_app_ui.png",
       description: "Customers browse suppliers, place water orders, and track real-time delivery on a live map. Features subscription plans, active order limits, OTP/QR delivery confirmation, and in-app support.",
     },
     {
       title: "WtrDrop — Supplier App",
       category: "Mobile App · Supplier Management",
-      image: "/images/wtrdrop.png",
+      image: "/images/supplier_app_ui.png",
       description: "Suppliers manage inventory, receive and assign orders to drivers, track daily revenue, generate invoices, and handle floor charges. Includes a full driver team management system with QR linking.",
     },
     {
       title: "WtrDrop — Driver App",
       category: "Mobile App · Delivery Management",
-      image: "/images/wtrdrop.png",
+      image: "/images/driver_app_ui.png",
       description: "Drivers get live delivery assignments, navigate routes on Google Maps, complete orders via QR scan, manage daily cash collection, track commission earnings, and deposit settlements to suppliers.",
     },
   ],
