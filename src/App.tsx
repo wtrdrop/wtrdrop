@@ -10,8 +10,7 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Guidelines from "./pages/Guidelines";
 import Seo from "./components/Seo";
-
-const Partner = lazy(() => import("./pages/Partner"));
+import Partner from "./pages/Partner";
 
 const Home = () => (
   <MainContainer>
