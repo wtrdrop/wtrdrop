@@ -11,6 +11,8 @@ import Privacy from "./pages/Privacy";
 import Guidelines from "./pages/Guidelines";
 import Seo from "./components/Seo";
 
+const Partner = lazy(() => import("./pages/Partner"));
+
 const Home = () => (
   <MainContainer>
     <Seo
@@ -38,6 +40,7 @@ const App = () => {
         <Route path="/terms" element={<WithLoading><Terms /></WithLoading>} />
         <Route path="/privacy" element={<WithLoading><Privacy /></WithLoading>} />
         <Route path="/guidelines" element={<WithLoading><Guidelines /></WithLoading>} />
+        <Route path="/partner" element={<WithLoading><Partner /></WithLoading>} />
       </Routes>
     </Suspense>
   );

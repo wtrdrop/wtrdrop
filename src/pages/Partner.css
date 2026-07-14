@@ -1,0 +1,380 @@
+/* =======================================================
+   WtrDrop Partner Page — Premium Hub Stylesheet
+   ======================================================= */
+
+.partner-page {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding-top: var(--nav-height);
+  overflow-x: hidden;
+}
+
+/* ---- Hero Section ---- */
+.partner-hero {
+  padding: 80px 0 100px;
+  background: linear-gradient(180deg, var(--brand-lighter) 0%, var(--bg) 100%);
+  transition: background var(--transition);
+}
+
+.partner-hero-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  justify-content: space-between;
+}
+
+.partner-hero-content {
+  flex: 1;
+  max-width: 580px;
+}
+
+.partner-hero-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--brand-light);
+  color: var(--brand-dark);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--radius-full);
+  margin-bottom: 24px;
+}
+
+.partner-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.partner-hero-content h1 span {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--teal-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.partner-hero-content p {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.partner-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.partner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.partner-btn-primary {
+  background: var(--brand);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-brand);
+}
+
+.partner-btn-primary:hover {
+  background: var(--brand-dark);
+  transform: translateY(-2px);
+}
+
+.partner-btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--border);
+}
+
+.partner-btn-outline:hover {
+  border-color: var(--text);
+  background: var(--bg-secondary);
+}
+
+.partner-hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.partner-hero-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  animation: floatIllustration 6s ease-in-out infinite;
+}
+
+@keyframes floatIllustration {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ---- Features Grid Section ---- */
+.partner-why-section {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+}
+
+.partner-section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.partner-section-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--brand-light);
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+}
+
+.partner-section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+.partner-why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.partner-why-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.partner-why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand);
+}
+
+.partner-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--brand) 0%, var(--teal) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-inverse);
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-brand);
+}
+
+.partner-why-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.partner-why-card p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ---- Onboarding Steps Section ---- */
+.partner-steps-section {
+  padding: 100px 0;
+  background: var(--bg);
+}
+
+.partner-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.partner-step-card {
+  position: relative;
+  padding: 40px 30px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.partner-step-card:hover {
+  border-color: var(--brand);
+  transform: translateY(-3px);
+}
+
+.partner-step-num {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.15;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.partner-step-card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 12px;
+  margin-top: 10px;
+}
+
+.partner-step-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ---- Call To Action Banner ---- */
+.partner-cta-banner {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--brand) 0%, #0c6a9c 100%);
+  color: var(--text-inverse);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.partner-cta-banner-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.partner-cta-banner h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.partner-cta-banner p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.partner-download-badges {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.partner-playstore-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #000000;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  border: 1px solid #333333;
+}
+
+.partner-playstore-badge:hover {
+  transform: translateY(-2px);
+  background: #111111;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.partner-playstore-badge img {
+  height: 28px;
+  width: auto;
+}
+
+.partner-playstore-badge .badge-text {
+  text-align: left;
+}
+
+.partner-playstore-badge .badge-subtitle {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+  display: block;
+}
+
+.partner-playstore-badge .badge-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: block;
+}
+
+/* ---- Responsive Adjustments ---- */
+@media only screen and (max-width: 1024px) {
+  .partner-hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+  .partner-hero-content {
+    max-width: 100%;
+  }
+  .partner-cta-group {
+    justify-content: center;
+  }
+  .partner-why-grid {
+    grid-template-columns: 1fr;
+  }
+  .partner-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .partner-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .partner-cta-banner h2 {
+    font-size: 2.2rem;
+  }
+}
