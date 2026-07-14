@@ -10,6 +10,14 @@
   overflow-x: hidden;
 }
 
+.partner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* ---- Hero Section ---- */
 .partner-hero {
   padding: 80px 0 100px;
@@ -283,6 +291,9 @@
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  width: 100%;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .partner-cta-banner h2 {
