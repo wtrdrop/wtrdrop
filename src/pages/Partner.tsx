@@ -31,6 +31,11 @@ export default function Partner() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className="partner-page">
+            {/* ---- Background Decorative Blobs ---- */}
+            <div className="partner-bg-blob partner-blob-1"></div>
+            <div className="partner-bg-blob partner-blob-2"></div>
+            <div className="partner-bg-blob partner-blob-3"></div>
+
             {/* ---- Hero Section ---- */}
             <section className="partner-hero">
               <div className="partner-container partner-hero-container">
@@ -57,6 +62,32 @@ export default function Partner() {
                     alt="WtrDrop Partner Rider delivering water" 
                     className="partner-hero-image"
                   />
+                </div>
+              </div>
+            </section>
+
+            {/* ---- Stats & Metrics Section ---- */}
+            <section className="partner-stats-section">
+              <div className="partner-container">
+                <div className="partner-stats-grid">
+                  <div className="partner-stat-card">
+                    <div className="stat-glow"></div>
+                    <h2>50+</h2>
+                    <h4>Cities Reached</h4>
+                    <p>Expanding across India's fastest-growing municipal hubs.</p>
+                  </div>
+                  <div className="partner-stat-card">
+                    <div className="stat-glow"></div>
+                    <h2>500+</h2>
+                    <h4>Active Partners</h4>
+                    <p>Water stations and local distributors scaling with WtrDrop.</p>
+                  </div>
+                  <div className="partner-stat-card">
+                    <div className="stat-glow"></div>
+                    <h2>1M+</h2>
+                    <h4>Liters Delivered</h4>
+                    <p>Hygienic drinking water supplied directly to doorsteps.</p>
+                  </div>
                 </div>
               </div>
             </section>
@@ -142,6 +173,60 @@ export default function Partner() {
                     <div className="partner-step-num">03</div>
                     <h3>Go Live & Earn</h3>
                     <p>Assign drivers to your fleet, set your delivery radius, and start receiving water delivery requests.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* ---- Testimonials Section ---- */}
+            <section className="partner-testimonials-section">
+              <div className="partner-container">
+                <div className="partner-section-header">
+                  <span className="partner-section-tag">Success Stories</span>
+                  <h2 className="partner-section-title">What our Partners say</h2>
+                </div>
+                <div className="partner-testimonials-grid">
+                  <div className="partner-testimonial-card">
+                    <div className="partner-avatar-group">
+                      <div className="partner-avatar" style={{ background: "linear-gradient(135deg, #008BD2, #03DAC6)" }}>S</div>
+                      <div className="partner-avatar-info">
+                        <h4>Sanjay Sharma</h4>
+                        <p>Owner, Aqua Pure Water · Delhi</p>
+                      </div>
+                    </div>
+                    <p className="partner-quote">
+                      "Onboarding our 5 delivery vehicles took under a day. 
+                      Our daily order count increased by 65% in the first month itself 
+                      due to WtrDrop's auto-routing."
+                    </p>
+                  </div>
+                  
+                  <div className="partner-testimonial-card">
+                    <div className="partner-avatar-group">
+                      <div className="partner-avatar" style={{ background: "linear-gradient(135deg, #03DAC6, #018786)" }}>R</div>
+                      <div className="partner-avatar-info">
+                        <h4>Rajesh Kumar</h4>
+                        <p>Distributor, Delhi Water Co.</p>
+                      </div>
+                    </div>
+                    <p className="partner-quote">
+                      "The automated cash settlement and driver QR assignment has saved us 
+                      10+ hours of manual bookkeeping work every single week. Highly recommend!"
+                    </p>
+                  </div>
+
+                  <div className="partner-testimonial-card">
+                    <div className="partner-avatar-group">
+                      <div className="partner-avatar" style={{ background: "linear-gradient(135deg, #008BD2, #5B3CC4)" }}>A</div>
+                      <div className="partner-avatar-info">
+                        <h4>Amit Singh</h4>
+                        <p>Partner, HimSip Stations</p>
+                      </div>
+                    </div>
+                    <p className="partner-quote">
+                      "Subscriptions are an absolute game changer. We now have a predictable 
+                      monthly revenue and highly loyal repeat customers without extra marketing."
+                    </p>
                   </div>
                 </div>
               </div>

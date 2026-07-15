@@ -359,6 +359,199 @@
   display: block;
 }
 
+/* ---- Background Decorative Blobs ---- */
+.partner-page {
+  position: relative;
+}
+
+.partner-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.25;
+  pointer-events: none;
+  animation: blobFloat 12s infinite alternate ease-in-out;
+}
+
+.partner-blob-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(27, 153, 209, 0.3) 0%, rgba(3, 218, 198, 0.1) 100%);
+  top: 10%;
+  left: -150px;
+}
+
+.partner-blob-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(3, 218, 198, 0.25) 0%, rgba(27, 153, 209, 0.1) 100%);
+  top: 40%;
+  right: -200px;
+  animation-delay: 2s;
+}
+
+.partner-blob-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(27, 153, 209, 0.2) 0%, rgba(91, 60, 196, 0.12) 100%);
+  bottom: 15%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes blobFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -40px) scale(1.08);
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.96);
+  }
+}
+
+/* ---- Stats Section ---- */
+.partner-stats-section {
+  padding: 60px 0 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.partner-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.partner-stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 40px 30px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.partner-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand);
+}
+
+.stat-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(27, 153, 209, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.partner-stat-card:hover .stat-glow {
+  opacity: 1;
+}
+
+.partner-stat-card h2 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--teal-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.partner-stat-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.partner-stat-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ---- Testimonials Section ---- */
+.partner-testimonials-section {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.partner-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.partner-testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 40px 30px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.partner-testimonial-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--brand);
+}
+
+.partner-avatar-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.partner-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-inverse);
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.partner-avatar-info h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.partner-avatar-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.partner-quote {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-style: italic;
+}
+
 /* ---- Responsive Adjustments ---- */
 @media only screen and (max-width: 1024px) {
   .partner-hero-container {
@@ -376,6 +569,14 @@
     grid-template-columns: 1fr;
   }
   .partner-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .partner-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .partner-testimonials-grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }
