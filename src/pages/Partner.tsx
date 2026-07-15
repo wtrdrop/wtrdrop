@@ -1,16 +1,38 @@
 import { useEffect } from "react";
+import { MdArrowForward, MdCheckCircle, MdLocalShipping, MdMap, MdTrendingUp } from "react-icons/md";
 import Navbar from "../components/Navbar";
 import Contact from "../components/Contact";
 import Seo from "../components/Seo";
+import SocialIcons from "../components/SocialIcons";
 import { useLoading } from "../context/LoadingProvider";
-import { 
-  MdLocalShipping, 
-  MdTrendingUp, 
-  MdNavigation, 
-  MdAppRegistration,
-  MdArrowForward
-} from "react-icons/md";
 import "./Partner.css";
+
+const benefits = [
+  {
+    icon: <MdLocalShipping />,
+    title: "Reach customers where they are",
+    text: "Put your water cans in front of nearby homes, offices and businesses through a dependable local delivery network.",
+    accent: "route",
+  },
+  {
+    icon: <MdTrendingUp />,
+    title: "Grow your business, every day",
+    text: "Increase repeat orders with subscriptions, scheduled deliveries and a digital storefront that is always open.",
+    accent: "growth",
+  },
+  {
+    icon: <MdMap />,
+    title: "Expand your local reach",
+    text: "Set the areas you serve, add your delivery team and make fresh water more accessible across your city.",
+    accent: "map",
+  },
+  {
+    icon: <MdCheckCircle />,
+    title: "Simple to get started",
+    text: "Share your business details and certificates, get verified, and begin receiving orders in a few easy steps.",
+    accent: "easy",
+  },
+];
 
 export default function Partner() {
   const { setLoading } = useLoading();
@@ -21,245 +43,115 @@ export default function Partner() {
 
   return (
     <>
-      <Seo 
-        title="Partner Hub | WtrDrop" 
-        description="Partner with WtrDrop to scale your water delivery business. Onboard your water station, manage deliveries, and reach more local customers."
+      <Seo
+        title="Partner with WtrDrop | Grow Your Water Business"
+        description="Join WtrDrop as a water supplier or distributor. Reach more nearby customers and simplify water delivery operations."
         path="/partner"
       />
       <Navbar />
-      
+      <SocialIcons />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <div className="partner-page">
-            {/* ---- Background Decorative Blobs ---- */}
-            <div className="partner-bg-blob partner-blob-1"></div>
-            <div className="partner-bg-blob partner-blob-2"></div>
-            <div className="partner-bg-blob partner-blob-3"></div>
-
-            {/* ---- Hero Section ---- */}
+          <main className="partner-page">
             <section className="partner-hero">
-              <div className="partner-container partner-hero-container">
-                <div className="partner-hero-content">
-                  <span className="partner-hero-tag">Supplier & Distributor Hub</span>
-                  <h1>Your Water. <br /><span>Delivered.</span></h1>
-                  <p>
-                    Connect your water filling station or distribution point with WtrDrop. 
-                    Onboard in minutes, manage your delivery team, and deliver fresh drinking water 
-                    to thousands of homes and offices nearby.
+              <div className="partner-container partner-hero-grid">
+                <div className="partner-hero-copy">
+                  <p className="partner-eyebrow">WtrDrop partner hub</p>
+                  <h1>Your water.<br /><span>Delivered further.</span></h1>
+                  <p className="partner-lede">
+                    Bring fresh, reliable water delivery to more customers. Join WtrDrop to manage your business, grow recurring orders and keep every route moving.
                   </p>
-                  <div className="partner-cta-group">
-                    <a href="#onboarding" className="partner-btn partner-btn-primary">
-                      Become a Partner <MdArrowForward />
-                    </a>
-                    <a href="#why-wtrdrop" className="partner-btn partner-btn-outline">
-                      Learn More
-                    </a>
+                  <div className="partner-actions">
+                    <a className="partner-primary-action" href="#onboarding">Become a partner <MdArrowForward /></a>
+                    <a className="partner-text-action" href="#why-wtrdrop">Explore benefits</a>
+                  </div>
+                  <div className="partner-trust-row">
+                    <span><MdCheckCircle /> Quick onboarding</span>
+                    <span><MdCheckCircle /> Built for local suppliers</span>
                   </div>
                 </div>
-                <div className="partner-hero-image-wrapper">
-                  <img 
-                    src="/images/partner_hero.png" 
-                    alt="WtrDrop Partner Rider delivering water" 
-                    className="partner-hero-image"
-                  />
+                <div className="partner-hero-art" aria-hidden="true">
+                  <img src="/images/partner-delivery-hero.png" alt="" />
                 </div>
               </div>
             </section>
 
-            {/* ---- Stats & Metrics Section ---- */}
-            <section className="partner-stats-section">
+            <section className="partner-benefits" id="why-wtrdrop">
               <div className="partner-container">
-                <div className="partner-stats-grid">
-                  <div className="partner-stat-card">
-                    <div className="stat-glow"></div>
-                    <h2>50+</h2>
-                    <h4>Cities Reached</h4>
-                    <p>Expanding across India's fastest-growing municipal hubs.</p>
-                  </div>
-                  <div className="partner-stat-card">
-                    <div className="stat-glow"></div>
-                    <h2>500+</h2>
-                    <h4>Active Partners</h4>
-                    <p>Water stations and local distributors scaling with WtrDrop.</p>
-                  </div>
-                  <div className="partner-stat-card">
-                    <div className="stat-glow"></div>
-                    <h2>1M+</h2>
-                    <h4>Liters Delivered</h4>
-                    <p>Hygienic drinking water supplied directly to doorsteps.</p>
-                  </div>
+                <div className="partner-benefits-heading">
+                  <p className="partner-eyebrow">Why partner with us</p>
+                  <h2>Everything you need to grow<br />your water business.</h2>
+                  <p>One platform for local discovery, smooth delivery operations and loyal customers.</p>
+                </div>
+                <div className="partner-benefits-grid">
+                  {benefits.map((benefit) => (
+                    <article className={`partner-benefit-card partner-benefit-${benefit.accent}`} key={benefit.title}>
+                      <div className="partner-benefit-icon">{benefit.icon}</div>
+                      <h3>{benefit.title}</h3>
+                      <p>{benefit.text}</p>
+                      <div className="partner-card-art" aria-hidden="true"><span /><span /><span /></div>
+                    </article>
+                  ))}
                 </div>
               </div>
             </section>
 
-            {/* ---- Why Choose WtrDrop Section ---- */}
-            <section className="partner-why-section" id="why-wtrdrop">
+            <section className="partner-people-section">
+              <div className="partner-container partner-people-layout">
+                <div className="partner-people-image partner-team-image">
+                  <img src="/images/partner-team.png" alt="Water supplier and delivery coordinator managing their business" />
+                </div>
+                <div className="partner-people-copy">
+                  <p className="partner-eyebrow">Built for your whole team</p>
+                  <h2>One connected system for suppliers and drivers.</h2>
+                  <p>Keep daily operations simple—from managing product availability to assigning deliveries and tracking every order.</p>
+                  <ul className="partner-checklist">
+                    <li><MdCheckCircle /> Manage inventory and service areas</li>
+                    <li><MdCheckCircle /> Assign orders to delivery partners</li>
+                    <li><MdCheckCircle /> Build recurring customer relationships</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section className="partner-delivery-section">
+              <div className="partner-container partner-delivery-layout">
+                <div className="partner-delivery-copy">
+                  <p className="partner-eyebrow">Every delivery counts</p>
+                  <h2>Deliver a better experience, right to the doorstep.</h2>
+                  <p>Give customers a convenient way to order fresh water while you run reliable, well-organized deliveries behind the scenes.</p>
+                  <a className="partner-text-action" href="#onboarding">See how to get started <MdArrowForward /></a>
+                </div>
+                <div className="partner-people-image partner-delivery-image">
+                  <img src="/images/partner-delivery-story.png" alt="Water delivery partner handing a water can to a customer" />
+                </div>
+              </div>
+            </section>
+
+            <section className="partner-start" id="onboarding">
+              <div className="partner-container partner-start-layout">
+                <div>
+                  <p className="partner-eyebrow">Start in three steps</p>
+                  <h2>From water station to your customers’ doorsteps.</h2>
+                </div>
+                <ol className="partner-steps">
+                  <li><span>01</span><div><h3>Register your business</h3><p>Tell us about your water station, service areas and delivery team.</p></div></li>
+                  <li><span>02</span><div><h3>Complete verification</h3><p>Upload the required identity and water-quality documents.</p></div></li>
+                  <li><span>03</span><div><h3>Start receiving orders</h3><p>Go live, fulfil deliveries and build a base of repeat customers.</p></div></li>
+                </ol>
+              </div>
+            </section>
+
+            <section className="partner-final-cta">
               <div className="partner-container">
-                <div className="partner-section-header">
-                  <span className="partner-section-tag">Why WtrDrop</span>
-                  <h2 className="partner-section-title">Why WtrDrop is every partner's top choice?</h2>
-                </div>
-                
-                <div className="partner-why-grid">
-                  <div className="partner-why-card">
-                    <div className="partner-card-icon">
-                      <MdLocalShipping />
-                    </div>
-                    <h3>Reach your customers where they are</h3>
-                    <p>
-                      List your water cans and water quality certificates to deliver fresh drinking water 
-                      directly through our dense, growing network of local delivery routes.
-                    </p>
-                  </div>
-
-                  <div className="partner-why-card">
-                    <div className="partner-card-icon">
-                      <MdTrendingUp />
-                    </div>
-                    <h3>Exponential growth opportunity</h3>
-                    <p>
-                      Scale your monthly sales with subscription plans, recurring deliveries, 
-                      and automated order dispatching.
-                    </p>
-                  </div>
-
-                  <div className="partner-why-card">
-                    <div className="partner-card-icon">
-                      <MdNavigation />
-                    </div>
-                    <h3>Smart Route & Driver Logistics</h3>
-                    <p>
-                      Optimize routes for your drivers automatically. Track daily collections, 
-                      GPS locations, and OTP delivery verifications in real-time.
-                    </p>
-                  </div>
-
-                  <div className="partner-why-card">
-                    <div className="partner-card-icon">
-                      <MdAppRegistration />
-                    </div>
-                    <h3>Simple & Easy Onboarding</h3>
-                    <p>
-                      Register your business details, upload water source certificates, 
-                      and go live in less than 24 hours.
-                    </p>
-                  </div>
+                <div className="partner-final-card">
+                  <div><p className="partner-eyebrow">Ready when you are</p><h2>Let’s deliver more, together.</h2><p>Join the WtrDrop network and take your water business further.</p></div>
+                  <a className="partner-primary-action partner-primary-action-light" href="https://play.google.com/store/apps/details?id=com.wtrdrop" target="_blank" rel="noreferrer">Get the partner app <MdArrowForward /></a>
                 </div>
               </div>
             </section>
-
-            {/* ---- Onboarding Steps Section ---- */}
-            <section className="partner-steps-section" id="onboarding">
-              <div className="partner-container">
-                <div className="partner-section-header">
-                  <span className="partner-section-tag">How it works</span>
-                  <h2 className="partner-section-title">Start selling in 3 simple steps</h2>
-                </div>
-
-                <div className="partner-steps-grid">
-                  <div className="partner-step-card">
-                    <div className="partner-step-num">01</div>
-                    <h3>Download Partner App</h3>
-                    <p>Download the WtrDrop Partner app from the Google Play Store on any Android device.</p>
-                  </div>
-
-                  <div className="partner-step-card">
-                    <div className="partner-step-num">02</div>
-                    <h3>Register Business</h3>
-                    <p>Upload your basic details, location, government ID, and water quality certificates for verification.</p>
-                  </div>
-
-                  <div className="partner-step-card">
-                    <div className="partner-step-num">03</div>
-                    <h3>Go Live & Earn</h3>
-                    <p>Assign drivers to your fleet, set your delivery radius, and start receiving water delivery requests.</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* ---- Testimonials Section ---- */}
-            <section className="partner-testimonials-section">
-              <div className="partner-container">
-                <div className="partner-section-header">
-                  <span className="partner-section-tag">Success Stories</span>
-                  <h2 className="partner-section-title">What our Partners say</h2>
-                </div>
-                <div className="partner-testimonials-grid">
-                  <div className="partner-testimonial-card">
-                    <div className="partner-avatar-group">
-                      <div className="partner-avatar" style={{ background: "linear-gradient(135deg, #008BD2, #03DAC6)" }}>S</div>
-                      <div className="partner-avatar-info">
-                        <h4>Sanjay Sharma</h4>
-                        <p>Owner, Aqua Pure Water · Delhi</p>
-                      </div>
-                    </div>
-                    <p className="partner-quote">
-                      "Onboarding our 5 delivery vehicles took under a day. 
-                      Our daily order count increased by 65% in the first month itself 
-                      due to WtrDrop's auto-routing."
-                    </p>
-                  </div>
-                  
-                  <div className="partner-testimonial-card">
-                    <div className="partner-avatar-group">
-                      <div className="partner-avatar" style={{ background: "linear-gradient(135deg, #03DAC6, #018786)" }}>R</div>
-                      <div className="partner-avatar-info">
-                        <h4>Rajesh Kumar</h4>
-                        <p>Distributor, Delhi Water Co.</p>
-                      </div>
-                    </div>
-                    <p className="partner-quote">
-                      "The automated cash settlement and driver QR assignment has saved us 
-                      10+ hours of manual bookkeeping work every single week. Highly recommend!"
-                    </p>
-                  </div>
-
-                  <div className="partner-testimonial-card">
-                    <div className="partner-avatar-group">
-                      <div className="partner-avatar" style={{ background: "linear-gradient(135deg, #008BD2, #5B3CC4)" }}>A</div>
-                      <div className="partner-avatar-info">
-                        <h4>Amit Singh</h4>
-                        <p>Partner, HimSip Stations</p>
-                      </div>
-                    </div>
-                    <p className="partner-quote">
-                      "Subscriptions are an absolute game changer. We now have a predictable 
-                      monthly revenue and highly loyal repeat customers without extra marketing."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* ---- CTA Banner ---- */}
-            <section className="partner-cta-banner">
-              <div className="partner-cta-banner-container">
-                <h2>Ready to grow with WtrDrop?</h2>
-                <p>
-                  Join hundreds of water suppliers who have expanded their reach and simplified 
-                  their delivery operations. Download the WtrDrop Partner App today.
-                </p>
-                <div className="partner-download-badges">
-                  <a 
-                    href="https://play.google.com/store/apps/details?id=com.wtrdrop" 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className="partner-playstore-badge"
-                  >
-                    <img src="/3d-icons/playstore.png" alt="Google Play Icon" />
-                    <div className="badge-text">
-                      <span className="badge-subtitle">Get it on</span>
-                      <span className="badge-title">Google Play</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </section>
-
-            {/* ---- Footer Component ---- */}
             <Contact />
-          </div>
+          </main>
         </div>
       </div>
     </>
