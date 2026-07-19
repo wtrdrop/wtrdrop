@@ -56,6 +56,7 @@ export default function Partner() {
             <section className="partner-hero">
               <div className="partner-container partner-hero-grid">
                 <div className="partner-hero-copy">
+                  <img className="partner-hub-logo" src="/images/wtrdrop-partner-logo.png" alt="WtrDrop Partner" />
                   <p className="partner-eyebrow">WtrDrop partner hub</p>
                   <h1>Your water.<br /><span>Delivered further.</span></h1>
                   <p className="partner-lede">
