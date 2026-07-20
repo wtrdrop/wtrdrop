@@ -55,14 +55,6 @@ const Contact = () => {
             >
               Instagram <MdArrowOutward />
             </a>
-            <a
-              href={config.socialLinks.googleMaps}
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Google Maps <MdArrowOutward />
-            </a>
           </div>
           <div className="contact-box">
             <h2>
