@@ -5,11 +5,13 @@ import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import "./styles/Navbar.css";
 import { getConfig } from "../data/siteConfig";
+import { useLocation } from "react-router-dom";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 export let smoother: ScrollSmoother | undefined;
 
 const Navbar = () => {
+  const { pathname } = useLocation();
   useEffect(() => {
     if (!ScrollTrigger.isTouch) {
       smoother = ScrollSmoother.create({
@@ -26,16 +28,16 @@ const Navbar = () => {
       smoother.paused(true);
     }
 
-    let links = document.querySelectorAll(".header ul a");
+    const links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
-      let element = elem as HTMLAnchorElement;
+      const element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
         if (window.innerWidth > 1024) {
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let href = elem.getAttribute("href");
+          const elem = e.currentTarget as HTMLAnchorElement;
+          const href = elem.getAttribute("href");
           if (href && href.startsWith("/#") && window.location.pathname === "/") {
             e.preventDefault();
-            let section = href.replace("/", "");
+            const section = href.replace("/", "");
             smoother?.scrollTo(section, true, "top top");
           }
         }
@@ -48,7 +50,7 @@ const Navbar = () => {
   const config = getConfig();
   return (
     <>
-      <div className="header">
+      <div className={`header${pathname === "/" ? "" : " header-solid"}`}>
         <a href="/#" className="navbar-title" data-cursor="disable">
           <img src="/logo.png" alt="WtrDrop Dashboard Logo" style={{ height: "100px", width: "auto" }} />
         </a>

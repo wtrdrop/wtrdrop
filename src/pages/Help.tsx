@@ -106,7 +106,7 @@ export default function Help() {
 
                 <div className="help-contact-right">
                   <div className="help-headset-image-wrapper">
-                    <img src="/images/help-3d-support.png" alt="WtrDrop Support Headset" className="help-headset-image" />
+                    <img src="/images/help-support-cta.png" alt="WtrDrop Support Headset" className="help-headset-image" />
                   </div>
                   
                   <div className="help-action-wrapper">

@@ -3,7 +3,44 @@
 @media(max-width:600px){.help-container{width:min(100% - 32px,1180px)}.help-hero-copy{padding-top:55px}.help-hero h1{font-size:3.15rem}.help-hero-copy>p:not(.help-eyebrow){font-size:1rem}.help-hero-art{height:310px;margin:0 -16px}.help-options,.help-guidance,.help-faq{padding:75px 0}.help-heading{margin-bottom:35px}.help-heading h2{font-size:2.4rem}.help-option-card{padding:28px}.help-contact{padding-bottom:65px}.help-contact-card{padding:35px 28px;border-radius:20px}.help-contact h2{font-size:2.5rem}}
 
 /* Image-backed 3D support cards */
-.help-options-grid{gap:26px;perspective:1500px}.help-option-card{padding:30px 30px 34px;min-height:380px;border-color:rgba(163,222,244,.8);background:linear-gradient(145deg,#f9feff,#dff5fc);transform-style:preserve-3d;box-shadow:14px 18px 0 rgba(162,220,240,.45),0 22px 35px rgba(7,85,122,.1);transition:transform .32s cubic-bezier(.2,.75,.2,1),box-shadow .32s}.help-option-card:hover{transform:translateY(-11px) rotateX(4deg) rotateY(-4deg);box-shadow:19px 27px 0 rgba(130,211,240,.42),0 32px 45px rgba(7,85,122,.18)}.help-card-image{height:146px;margin:-30px -30px 18px;position:relative;overflow:hidden;background:linear-gradient(135deg,#caeffc,#f5fdff);transform:translateZ(22px)}.help-card-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(225,248,255,.75),transparent 55%),linear-gradient(0deg,rgba(223,245,252,.75),transparent 45%)}.help-card-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:saturate(1.06)}.help-option-icon{position:relative;z-index:1;transform:translateZ(35px);box-shadow:0 9px 0 #0075b1,0 14px 21px rgba(0,139,210,.2)}.help-option-card h3{position:relative;z-index:1;transform:translateZ(26px)}.help-option-card p{position:relative;z-index:1;transform:translateZ(20px)}.help-option-card a{z-index:1;bottom:28px;transform:translateZ(28px)}
+.help-options-grid{gap:26px;perspective:1500px}
+.help-option-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px 34px;
+  min-height: 400px;
+  border-color: rgba(163,222,244,.8);
+  background: linear-gradient(145deg,#f9feff,#dff5fc);
+  transform-style: preserve-3d;
+  box-shadow: 14px 18px 0 rgba(162,220,240,.45),0 22px 35px rgba(7,85,122,.1);
+  transition: transform .32s cubic-bezier(.2,.75,.2,1),box-shadow .32s;
+  box-sizing: border-box;
+  position: relative;
+}
+.help-option-card:hover{transform:translateY(-11px) rotateX(4deg) rotateY(-4deg);box-shadow:19px 27px 0 rgba(130,211,240,.42),0 32px 45px rgba(7,85,122,.18)}
+.help-card-image{height:146px;margin:-30px -30px 18px;position:relative;overflow:hidden;background:linear-gradient(135deg,#caeffc,#f5fdff);transform:translateZ(22px)}
+.help-card-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(225,248,255,.75),transparent 55%),linear-gradient(0deg,rgba(223,245,252,.75),transparent 45%)}
+.help-card-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:saturate(1.06)}
+.help-option-icon{position:relative;z-index:1;transform:translateZ(35px);box-shadow:0 9px 0 #0075b1,0 14px 21px rgba(0,139,210,.2)}
+.help-option-card h3{position:relative;z-index:1;transform:translateZ(26px)}
+.help-option-card p {
+  position: relative;
+  z-index: 1;
+  transform: translateZ(20px);
+  margin: 0 0 24px 0;
+  flex-grow: 1;
+}
+.help-option-card a {
+  z-index: 1;
+  position: relative;
+  margin-top: auto;
+  transform: translateZ(28px);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--help-blue);
+  font-weight: 800;
+}
 @media(max-width:900px){.help-option-card{min-height:355px}.help-card-image{height:155px}}
 @media(max-width:600px){.help-option-card{padding:28px;min-height:345px}.help-card-image{margin:-28px -28px 18px}}
 
@@ -15,7 +52,7 @@
   gap: 50px;
   padding: 60px 80px;
   border-radius: 30px;
-  background: linear-gradient(135deg, #0056C6 0%, #008BD2 60%, #00A9E2 100%);
+  background: url("/images/help-support-cta.png") center / 100% 100% no-repeat;
   color: #fff;
   box-shadow: 0 25px 50px rgba(0, 86, 198, 0.22);
   position: relative;
@@ -157,20 +194,11 @@
 }
 
 .help-headset-image-wrapper {
-  position: relative;
-  width: 260px;
-  height: 240px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+  display: none;
 }
 
 .help-headset-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  display: none;
 }
 
 .help-action-wrapper {
@@ -178,6 +206,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-top: 230px;
 }
 
 .help-contact-btn-premium {
@@ -279,6 +308,13 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+  }
+  .help-contact-card-premium {
+    background-position: center bottom;
+    background-size: auto 72%;
+  }
+  .help-action-wrapper {
+    margin-top: 0;
   }
 }
 
