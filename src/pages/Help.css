@@ -52,7 +52,7 @@
   gap: 50px;
   padding: 60px 80px;
   border-radius: 30px;
-  background: url("/images/help-support-cta.png") center / 100% 100% no-repeat;
+  background: url("/images/help-support-cta.png") right center / cover no-repeat;
   color: #fff;
   box-shadow: 0 25px 50px rgba(0, 86, 198, 0.22);
   position: relative;
