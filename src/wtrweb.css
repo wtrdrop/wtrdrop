@@ -950,19 +950,40 @@ img {
   background: var(--surface);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-light);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  overflow: hidden;
+}
+
+.step-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand), var(--teal));
+  opacity: 0;
+  transition: opacity var(--transition);
 }
 
 .step-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(27, 153, 209, .12);
+  border-color: rgba(27, 153, 209, .25);
+}
+
+.step-card:hover::after {
+  opacity: 1;
 }
 
 .step-number {
   font-size: 4rem;
   font-weight: 900;
-  color: var(--brand);
-  opacity: .08;
+  background: linear-gradient(135deg, var(--brand), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: .12;
   position: absolute;
   top: 10px;
   left: 20px;
@@ -972,6 +993,11 @@ img {
 .step-icon-wrap {
   margin-bottom: 20px;
   display: inline-flex;
+  transition: transform var(--transition);
+}
+
+.step-card:hover .step-icon-wrap {
+  transform: scale(1.08);
 }
 
 .step-icon {
@@ -995,6 +1021,30 @@ img {
   display: none;
 }
 
+@media (min-width: 900px) {
+  .step-connector {
+    display: block;
+    position: absolute;
+    right: -28px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    z-index: 2;
+  }
+  .step-connector svg {
+    overflow: visible;
+  }
+  .step-connector path {
+    stroke-dasharray: 6 4;
+    animation: connectorDraw 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes connectorDraw {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -20; }
+}
+
 /* ================================
    FEATURES
    ================================ */
@@ -1009,7 +1059,7 @@ img {
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 36px 28px;
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  transition: transform .4s cubic-bezier(.2, .8, .2, 1), box-shadow .4s cubic-bezier(.2, .8, .2, 1), border-color var(--transition);
   position: relative;
   overflow: hidden;
 }
@@ -1021,19 +1071,44 @@ img {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--brand), var(--teal));
+  background: linear-gradient(90deg, var(--brand), var(--teal), var(--brand));
+  background-size: 200% 100%;
   opacity: 0;
   transition: opacity var(--transition);
+  animation: featureGlowSweep 3s ease infinite;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(27, 153, 209, .06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity .4s ease;
+  pointer-events: none;
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--brand);
+  transform: perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-8px);
+  box-shadow: 0 20px 50px rgba(27, 153, 209, .14), 0 8px 20px rgba(0,0,0,.06);
+  border-color: rgba(27, 153, 209, .3);
 }
 
 .feature-card:hover::before {
   opacity: 1;
+}
+
+.feature-card:hover::after {
+  opacity: 1;
+}
+
+@keyframes featureGlowSweep {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .feature-icon-wrap {
@@ -1047,10 +1122,17 @@ img {
   margin-bottom: 20px;
   font-size: 28px;
   transition: transform var(--transition);
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
 .feature-card:hover .feature-icon-wrap {
-  transform: scale(1.1) rotate(-5deg);
+  transform: scale(1.12) rotate(-5deg);
+  animation: none;
 }
 
 .feature-title {
@@ -1381,14 +1463,35 @@ img {
 .testimonial-card {
   background: var(--surface);
   border: 1px solid var(--border-light);
+  border-left: 3px solid transparent;
+  border-image: linear-gradient(180deg, var(--brand), var(--teal)) 1;
+  border-image-slice: 0 0 0 1;
   border-radius: var(--radius-lg);
   padding: 32px 28px;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s cubic-bezier(.2, .8, .2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: -8px;
+  right: 16px;
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--brand), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: .1;
+  pointer-events: none;
 }
 
 .testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 45px rgba(27, 153, 209, .14), 0 6px 16px rgba(0,0,0,.05);
 }
 
 .testimonial-stars {
@@ -1396,6 +1499,12 @@ img {
   font-size: 1.1rem;
   letter-spacing: 2px;
   margin-bottom: 16px;
+  animation: starShimmer 3s ease-in-out infinite;
+}
+
+@keyframes starShimmer {
+  0%, 100% { opacity: 1; text-shadow: 0 0 0 transparent; }
+  50% { opacity: .85; text-shadow: 0 0 8px rgba(245, 158, 11, .35); }
 }
 
 .testimonial-text {
@@ -1404,12 +1513,16 @@ img {
   color: var(--text-secondary);
   margin-bottom: 24px;
   font-style: italic;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-author {
   display: flex;
   align-items: center;
   gap: 12px;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-avatar {
@@ -1423,6 +1536,7 @@ img {
   font-weight: 700;
   font-size: 1.1rem;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
 }
 
 .testimonial-name {
