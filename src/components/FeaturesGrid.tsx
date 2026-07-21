@@ -9,8 +9,9 @@ export default function FeaturesGrid() {
           <h2 className="section-title">Packed with Powerful Features</h2>
           <p className="section-subtitle">Everything you need for seamless water delivery</p>
         </div>
+        <div className="features-bg-mesh" aria-hidden="true"></div>
         <div className="features-grid">
-          <div className="feature-card" data-animate="fade-up" data-delay="50">
+          <div className="feature-card feature-card-hero" data-animate="fade-up" data-delay="50">
             <div className="feature-icon-wrap">
               <img src="/3d-icons/icon_water_tap_1775638023220.png" alt="Instant Delivery" style={{ width: "80%", height: "80%", objectFit: "contain", borderRadius: "10px" }} />
             </div>
