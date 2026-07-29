@@ -22,6 +22,7 @@ const htmlContent = `<div class="policy-page-wrapper">
                 <div class="policy-nav-group">
                     <div class="policy-nav-title">Legal & Policies</div>
                     <ul class="policy-nav-list">
+                        <li><a href="/partner" class="policy-nav-link">Partner Hub</a></li>
                         <li><a href="/guidelines" class="policy-nav-link active">Guidelines and Policies</a></li>
                         <li><a href="/privacy" class="policy-nav-link">Privacy Policy</a></li>
                         <li><a href="/terms" class="policy-nav-link">Terms of Service</a></li>

@@ -82,6 +82,9 @@ const SocialIcons = () => {
         </span>
       </div>
       <div className="policy-links-container">
+        <a className="policy-link" href="/partner">
+          Partner
+        </a>
         <a className="policy-link" href="/terms">
           T&C
         </a>

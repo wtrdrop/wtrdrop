@@ -22,6 +22,37 @@ const Contact = () => {
             <p>{config.contact.focus}</p>
           </div>
           <div className="contact-box">
+            <h4>Explore</h4>
+            <a
+              href="/partner"
+              data-cursor="disable"
+              className="contact-social"
+            >
+              Partner Hub <MdArrowOutward />
+            </a>
+            <a
+              href="/help"
+              data-cursor="disable"
+              className="contact-social"
+            >
+              Help Center <MdArrowOutward />
+            </a>
+            <a
+              href="/privacy"
+              data-cursor="disable"
+              className="contact-social"
+            >
+              Privacy Policy <MdArrowOutward />
+            </a>
+            <a
+              href="/terms"
+              data-cursor="disable"
+              className="contact-social"
+            >
+              Terms & Conditions <MdArrowOutward />
+            </a>
+          </div>
+          <div className="contact-box">
             <h4>Social</h4>
             <a
               href={config.socialLinks.facebook}
