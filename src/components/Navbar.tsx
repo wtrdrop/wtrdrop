@@ -52,7 +52,7 @@ const Navbar = () => {
     <>
       <div className={`header${pathname === "/" ? "" : " header-solid"}`}>
         <a href="/#" className="navbar-title" data-cursor="disable">
-          <img src="/logo.png" alt="WtrDrop Dashboard Logo" style={{ height: "100px", width: "auto" }} />
+          <img src="/logo.png" alt="WtrDrop Dashboard Logo" className="navbar-logo-img" />
         </a>
         <a
           href={config.downloadLink}

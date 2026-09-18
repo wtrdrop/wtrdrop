@@ -14,12 +14,24 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Email</h4>
             <p>
-              <a href={`mailto:${config.contact.email}`} data-cursor="disable">
-                {config.contact.email}
+              <a href={`mailto:${config.contact.email}`} className="contact-link" data-cursor="disable">
+                {config.contact.email} <MdArrowOutward />
+              </a>
+            </p>
+            <h4>Phone / WhatsApp</h4>
+            <p>
+              <a
+                href={config.contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-link"
+                data-cursor="disable"
+              >
+                {config.contact.phone} <MdArrowOutward />
               </a>
             </p>
             <h4>Focus</h4>
-            <p>{config.contact.focus}</p>
+            <p className="contact-focus">{config.contact.focus}</p>
           </div>
           <div className="contact-box">
             <h4>Explore</h4>

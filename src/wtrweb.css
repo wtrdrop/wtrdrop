@@ -2554,8 +2554,19 @@ img {
   margin: 0 !important;
 }
 
-#smooth-content>.wtrweb-integrated-sections:first-of-type {
-  margin-top: 100vh !important;
+@media (min-width: 1024px) {
+  #smooth-content > .wtrweb-integrated-sections:first-of-type {
+    margin-top: 100vh !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  #smooth-content > .wtrweb-integrated-sections:first-of-type {
+    margin-top: 0 !important;
+  }
+  .wtrweb-integrated-sections {
+    padding: 60px 0 !important;
+  }
 }
 
 .wtrweb-integrated-sections .container {

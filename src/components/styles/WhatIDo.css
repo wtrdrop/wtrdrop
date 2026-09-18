@@ -363,6 +363,9 @@
 @media only screen and (max-width: 900px) {
   .whatIDO {
     flex-direction: column;
+    height: auto !important;
+    min-height: auto;
+    padding: 60px 0;
   }
 
   .what-box h2 {

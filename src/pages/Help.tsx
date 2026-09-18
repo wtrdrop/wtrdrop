@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { MdArrowForward, MdHelpOutline, MdLocalShipping, MdStorefront } from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import { useLoading } from "../context/LoadingProvider";
+import { getConfig } from "../data/siteConfig";
 import Seo from "../components/Seo";
 import "./Help.css";
 
@@ -20,6 +22,8 @@ const faqs = [
 
 export default function Help() {
   const { setLoading } = useLoading();
+  const config = getConfig();
+
   useEffect(() => { setLoading(100); }, [setLoading]);
 
   return (
@@ -37,7 +41,16 @@ export default function Help() {
                 <a href="#support-options" className="help-primary-action">Explore support <MdArrowForward /></a>
                 <div className="help-availability"><span /> Support for customers, suppliers and drivers</div>
               </div>
-              <div className="help-hero-art" aria-hidden="true"><img src="/images/help-center-hero.png" alt="" /></div>
+              <div className="help-hero-art" aria-hidden="true">
+                <video
+                  src="/videos/helpvideo.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="help-hero-video"
+                />
+              </div>
             </div>
           </section>
 
@@ -46,7 +59,7 @@ export default function Help() {
               <div className="help-heading"><p className="help-eyebrow">Choose your support</p><h2>How can we help today?</h2><p>Select the area that best matches what you need.</p></div>
               <div className="help-options-grid">
                 {supportAreas.map((area) => <article className="help-option-card" key={area.title}>
-                  <div className="help-card-image"><img src={area.image} alt="" /></div><div className="help-option-icon">{area.icon}</div><h3>{area.title}</h3><p>{area.text}</p><a href="mailto:Query@wtrdrop.in">Get help <MdArrowForward /></a>
+                  <div className="help-card-image"><img src={area.image} alt="" /></div><div className="help-option-icon">{area.icon}</div><h3>{area.title}</h3><p>{area.text}</p><a href={`${config.contact.whatsapp}?text=${encodeURIComponent(`Hello WtrDrop Support, I need help regarding ${area.title}`)}`} target="_blank" rel="noopener noreferrer">Chat on WhatsApp <MdArrowForward /></a>
                 </article>)}
               </div>
             </div>
@@ -55,7 +68,7 @@ export default function Help() {
           <section className="help-guidance">
             <div className="help-container help-guidance-layout">
               <div><p className="help-eyebrow">A simpler way to resolve things</p><h2>Get back to what matters.</h2><p>Most questions can be resolved in just a few moments. We make it easy to find an answer, manage an order or reach our team.</p></div>
-              <ol className="help-steps"><li><span>01</span><div><h3>Find your topic</h3><p>Choose the support area that fits your question.</p></div></li><li><span>02</span><div><h3>Get a quick answer</h3><p>Read our frequently asked questions and guidance.</p></div></li><li><span>03</span><div><h3>Contact us anytime</h3><p>Still need help? Send our support team a message.</p></div></li></ol>
+              <ol className="help-steps"><li><span>01</span><div><h3>Find your topic</h3><p>Choose the support area that fits your question.</p></div></li><li><span>02</span><div><h3>Get a quick answer</h3><p>Read our frequently asked questions and guidance.</p></div></li><li><span>03</span><div><h3>WhatsApp us anytime</h3><p>Still need help? Message our support team on WhatsApp.</p></div></li></ol>
             </div>
           </section>
 
@@ -68,7 +81,7 @@ export default function Help() {
                   <span className="help-contact-badge">Still Need Help?</span>
                   <h2>Our support team <br />is here for <span>you.</span></h2>
                   <p className="help-contact-desc">
-                    Send us a message and we'll help you find the right next step.
+                    Send us a message on WhatsApp and we'll help you find the right next step.
                   </p>
                   
                   <div className="help-contact-features">
@@ -110,11 +123,11 @@ export default function Help() {
                   </div>
                   
                   <div className="help-action-wrapper">
-                    <a href="mailto:Query@wtrdrop.in" className="help-contact-btn-premium">
+                    <a href={config.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="help-contact-btn-premium">
                       <span className="help-btn-icon-circle">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <FaWhatsapp size={22} color="#25D366" />
                       </span>
-                      <span className="help-btn-text">Contact support</span>
+                      <span className="help-btn-text">Chat on WhatsApp</span>
                       <span className="help-btn-arrow">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                       </span>

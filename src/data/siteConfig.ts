@@ -11,7 +11,12 @@ export interface SiteConfig {
   };
   contact: {
     email: string;
+    phone: string;
+    whatsapp: string;
     focus: string;
+  };
+  leadership: {
+    founderAndCeo: string;
   };
   downloadLink: string;
   testimonials: {
@@ -39,7 +44,12 @@ const DEFAULT_CONFIG: SiteConfig = {
   },
   contact: {
     email: "Query@wtrdrop.in",
+    phone: "+91 8076107210",
+    whatsapp: "https://wa.me/918076107210",
     focus: "Water Delivery · Ecosystem · Platform",
+  },
+  leadership: {
+    founderAndCeo: "Salman Ali",
   },
   downloadLink: "https://play.google.com/store/apps/details?id=com.wtrdrop",
   testimonials: [

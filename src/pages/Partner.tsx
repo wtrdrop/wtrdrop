@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { MdArrowForward, MdCheckCircle, MdLocalShipping, MdMap, MdTrendingUp } from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import Contact from "../components/Contact";
 import Seo from "../components/Seo";
 import SocialIcons from "../components/SocialIcons";
 import { useLoading } from "../context/LoadingProvider";
+import { getConfig } from "../data/siteConfig";
 import "./Partner.css";
 
 const benefits = [
@@ -36,6 +38,7 @@ const benefits = [
 
 export default function Partner() {
   const { setLoading } = useLoading();
+  const config = getConfig();
 
   useEffect(() => {
     setLoading(100);
@@ -63,8 +66,15 @@ export default function Partner() {
                     Bring fresh, reliable water delivery to more customers. Join WtrDrop to manage your business, grow recurring orders and keep every route moving.
                   </p>
                   <div className="partner-actions">
-                    <a className="partner-primary-action" href="#onboarding">Become a partner <MdArrowForward /></a>
-                    <a className="partner-text-action" href="#why-wtrdrop">Explore benefits</a>
+                    <a
+                      className="partner-whatsapp-action"
+                      href={`${config.contact.whatsapp}?text=${encodeURIComponent("Hello WtrDrop, I want to partner with WtrDrop as a supplier/driver.")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaWhatsapp size={20} /> Chat on WhatsApp
+                    </a>
+                    <a className="partner-text-action" href="#onboarding">Explore steps</a>
                   </div>
                   <div className="partner-trust-row">
                     <span><MdCheckCircle /> Quick onboarding</span>
@@ -147,7 +157,14 @@ export default function Partner() {
               <div className="partner-container">
                 <div className="partner-final-card">
                   <div><p className="partner-eyebrow">Ready when you are</p><h2>Let’s deliver more, together.</h2><p>Join the WtrDrop network and take your water business further.</p></div>
-                  <a className="partner-primary-action partner-primary-action-light" href="https://play.google.com/store/apps/details?id=com.wtrdrop" target="_blank" rel="noreferrer">Get the partner app <MdArrowForward /></a>
+                  <a
+                    className="partner-primary-action partner-primary-action-light"
+                    href={`${config.contact.whatsapp}?text=${encodeURIComponent("Hello WtrDrop, I would like to join as a partner.")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaWhatsapp size={22} color="#25D366" /> Chat on WhatsApp
+                  </a>
                 </div>
               </div>
             </section>
